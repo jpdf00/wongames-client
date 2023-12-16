@@ -4,10 +4,10 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
+    '!src/**/stories.tsx',
     '!src/app/**', // should be tested in e2e
     '!src/lib/registry.tsx',
     '!src/types/**',
-    '!src/**/stories.tsx',
     '!src/styles/**'
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
@@ -20,6 +20,6 @@ module.exports = {
   // we should to force it to use the browser version
   moduleNameMapper: {
     '^styled-components':
-      'styled-components/dist/styled-components.browser.cjs.js'
+      '<rootDir>/node_modules/styled-components/dist/styled-components.browser.cjs.js'
   }
 }
